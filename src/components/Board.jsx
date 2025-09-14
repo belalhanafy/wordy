@@ -3,7 +3,7 @@ import Words from "./Words";
 import { GameContext } from "../context/GameContext";
 
 const Board = () => {
-    const { board, colors, word, flippingRow } = useContext(GameContext);
+    const { board, colors, flippingRow } = useContext(GameContext);
 
     return (
         <div className="grid grid-rows-6 gap-2">

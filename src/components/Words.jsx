@@ -17,7 +17,7 @@ const Words = ({ row, colorRow, isFlipping }) => {
                 return (
                     <div
                         key={colIndex}
-                        className={`w-16 h-16 border flex items-center justify-center text-3xl rounded-md font-bold uppercase
+                        className={`w-14 h-14git border flex items-center justify-center text-3xl rounded-md font-bold uppercase
               ${color}
               ${isHint ? "border-3 border-green-700" : ""}
               ${isFlipping ? "tile-flip" : ""}
