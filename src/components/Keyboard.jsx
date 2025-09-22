@@ -9,7 +9,7 @@ const Keyboard = () => {
     const { handleKeyPress } = useContext(GameContext);
 
     return (
-        <div className="flex flex-col gap-2 mt-6">
+        <div className="flex-col gap-2 mt-6 flex md:hidden">
             <div className="flex justify-center gap-2">
                 {keys1.map((keyLetter) => (
                     <Key key={keyLetter} keyVal={keyLetter} onKeyPress={handleKeyPress} />
@@ -35,8 +35,8 @@ const Key = ({ keyVal, onKeyPress }) => {
     return (
         <button
             onClick={() => onKeyPress(keyVal)}
-            className={`${keyVal === "ENTER" || keyVal === "DELETE" ? "w-24" : "w-12"}
-        h-14 flex items-center justify-center rounded-md font-semibold 
+            className={`${keyVal === "ENTER" || keyVal === "DELETE" ? "w-18" : "w-10"}
+        h-11 flex items-center justify-center rounded-md font-semibold 
         bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 
         hover:bg-gray-300 dark:hover:bg-gray-600 transition
       `}

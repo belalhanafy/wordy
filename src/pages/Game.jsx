@@ -5,7 +5,7 @@ import HelpIns from "../components/HelpIns";
 
 const Game = () => {
     return (
-        <div className="flex flex-col gap-4 items-center justify-center h-[calc(100vh-70px)] dark:bg-gray-900 transition-colors">
+        <div className=" px-6 lg:p-0 flex flex-col gap-4 items-center justify-center h-[calc(100vh-70px)] dark:bg-gray-900 transition-colors">
             <HelpIns />
             <Board />
             <Keyboard />

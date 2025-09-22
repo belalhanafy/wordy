@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { boardDefaults } from "../components/Words";
+import useKeyboardInput from "../components/useKeyboardInput";
 
 export const GameContext = createContext();
 
@@ -35,6 +36,7 @@ export const GameProvider = ({ children }) => {
 
         fetchWord();
     }, []);
+
 
     const handleKeyPress = (key) => {
         if (loading) return;
@@ -136,6 +138,8 @@ export const GameProvider = ({ children }) => {
         }
 
     };
+
+    useKeyboardInput(handleKeyPress);
 
     const resetGame = async () => {
         setBoard(boardDefaults.map(r => r.map(c => ({ ...c }))));
