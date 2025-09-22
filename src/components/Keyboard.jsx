@@ -9,23 +9,23 @@ const Keyboard = () => {
     const { handleKeyPress } = useContext(GameContext);
 
     return (
-        <div className="flex flex-col gap-2 mt-6 md:hidden w-full px-1">
+        <div className="flex-col gap-2 mt-6 flex md:hidden w-full px-1">
             {/* Row 1 */}
-            <div className="flex gap-1">
+            <div className="grid grid-cols-10 gap-1 w-full">
                 {keys1.map((keyLetter) => (
                     <Key key={keyLetter} keyVal={keyLetter} onKeyPress={handleKeyPress} />
                 ))}
             </div>
 
             {/* Row 2 */}
-            <div className="flex gap-1 justify-center">
+            <div className="grid grid-cols-9 gap-1 w-full">
                 {keys2.map((keyLetter) => (
                     <Key key={keyLetter} keyVal={keyLetter} onKeyPress={handleKeyPress} />
                 ))}
             </div>
 
             {/* Row 3 */}
-            <div className="flex gap-1">
+            <div className="grid grid-cols-9 gap-1 w-full">
                 {keys3.map((keyLetter) => (
                     <Key key={keyLetter} keyVal={keyLetter} onKeyPress={handleKeyPress} />
                 ))}
@@ -35,17 +35,13 @@ const Keyboard = () => {
 };
 
 const Key = ({ keyVal, onKeyPress }) => {
-    // Make ENTER and DELETE larger
-    const isWide = keyVal === "ENTER" || keyVal === "DELETE";
-
     return (
         <button
             onClick={() => onKeyPress(keyVal)}
-            className={`flex-1 h-12 sm:h-14 md:h-16 flex items-center justify-center 
-      rounded-md font-semibold text-sm sm:text-base 
-      bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 
-      hover:bg-gray-300 dark:hover:bg-gray-600 transition
-      ${isWide ? "flex-[1.5]" : ""}`}
+            className={`flex items-center justify-center rounded-md font-semibold
+        bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 
+        hover:bg-gray-300 dark:hover:bg-gray-600 transition
+        text-xs sm:text-sm md:text-base h-12 w-full`}
         >
             {keyVal}
         </button>
