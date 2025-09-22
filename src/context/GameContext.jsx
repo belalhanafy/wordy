@@ -38,14 +38,13 @@ export const GameProvider = ({ children }) => {
     }, []);
 
 
-    const handleKeyPress = (key) => {        
+    const handleKeyPress = (key) => {
         if (loading) return;
 
         if (key === "ENTER") {
             if (currCol === 5) {
                 const guess = board[currRow].map((c) => c.letter).join("");
 
-                // evaluate with duplicate-safe logic
                 const evaluateGuess = (guessWord, targetWord) => {
                     const result = Array(5).fill("absent");
                     const targetArr = targetWord.split("");
