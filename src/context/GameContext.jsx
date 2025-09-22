@@ -38,9 +38,7 @@ export const GameProvider = ({ children }) => {
     }, []);
 
 
-    const handleKeyPress = (key) => {
-        console.log(key);
-        
+    const handleKeyPress = (key) => {        
         if (loading) return;
 
         if (key === "ENTER") {
