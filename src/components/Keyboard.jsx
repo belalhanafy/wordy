@@ -35,8 +35,8 @@ const Key = ({ keyVal, onKeyPress }) => {
     return (
         <button
             onClick={() => onKeyPress(keyVal)}
-            className={`${keyVal === "ENTER" || keyVal === "DELETE" ? "w-18" : "w-10"}
-        h-11 flex items-center justify-center rounded-md font-semibold 
+            className={`${keyVal === "ENTER" || keyVal === "DELETE" ? "lg:w-18 w-15" : "w-8"}
+        h-12 flex items-center justify-center rounded-md font-semibold 
         bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 
         hover:bg-gray-300 dark:hover:bg-gray-600 transition
       `}
