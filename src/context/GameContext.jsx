@@ -14,7 +14,8 @@ export const GameProvider = ({ children }) => {
     const [help, setHelp] = useState(false);
     const [hintsLeft, setHintsLeft] = useState(1);
     const [flippingRow, setFlippingRow] = useState(-1);
-
+    console.log("word:", word);
+    
     useEffect(() => {
         const fetchWord = async () => {
             try {
@@ -100,7 +101,7 @@ export const GameProvider = ({ children }) => {
                         setCurrRow((prev) => prev + 1);
                         setCurrCol(0);
                     }
-                }, 300 * 5 + 100);
+                }, 300 * 5 + 700);
             }
             return;
         }

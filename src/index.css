@@ -31,3 +31,23 @@
   backface-visibility: hidden;
   animation: flip 600ms cubic-bezier(.2,.8,.2,1) both;
 }
+
+
+@keyframes bounce-reveal {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-25%);
+  }
+  60% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.tile-bounce {
+  animation: bounce-reveal 0.4s ease forwards;
+}

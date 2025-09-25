@@ -1,6 +1,6 @@
 import React from "react";
 
-const Words = ({ row, colorRow, isFlipping }) => {
+const Words = ({ row, colorRow, isFlipping, isCorrectWord }) => {
   return (
     <div className="grid grid-cols-5 gap-2">
       {row.map((cell, colIndex) => {
@@ -10,10 +10,10 @@ const Words = ({ row, colorRow, isFlipping }) => {
           colorRow?.[colIndex] === "correct"
             ? "bg-green-500 text-white"
             : colorRow?.[colIndex] === "present"
-            ? "bg-yellow-500 text-white"
-            : colorRow?.[colIndex] === "absent"
-            ? "bg-gray-500 text-white"
-            : "bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100";
+              ? "bg-yellow-500 text-white"
+              : colorRow?.[colIndex] === "absent"
+                ? "bg-gray-500 text-white"
+                : "bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100";
 
         const borderColor = letter
           ? "border-black border-2 dark:border-gray-400"
@@ -25,17 +25,23 @@ const Words = ({ row, colorRow, isFlipping }) => {
           ? { animationDelay: `${colIndex * 0.2}s` }
           : undefined;
 
+        const bounceDelayStyle = isCorrectWord
+          ? { animationDelay: `${colIndex * 0.2}s` }
+          : undefined;
+
         return (
           <div key={colIndex} className="tile-container">
             <div
-              className={`w-14 h-14 border flex items-center justify-center text-3xl rounded-md font-bold uppercase
+              className={`
+                w-14 h-14 border flex items-center justify-center text-3xl rounded-md font-bold uppercase
                 ${color}
                 ${borderColor}
                 ${isHint ? "border-3 border-green-700" : ""}
                 ${isFlipping ? "tile-flip" : ""}
                 ${showPop ? "tile-pop" : ""}
+                ${isCorrectWord ? "tile-bounce" : ""}
               `}
-              style={flipDelayStyle}
+              style={isCorrectWord ? bounceDelayStyle : flipDelayStyle}
             >
               {letter}
             </div>
