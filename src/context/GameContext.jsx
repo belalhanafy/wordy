@@ -14,7 +14,6 @@ export const GameProvider = ({ children }) => {
     const [help, setHelp] = useState(false);
     const [hintsLeft, setHintsLeft] = useState(1);
     const [flippingRow, setFlippingRow] = useState(-1);
-    console.log("word:", word);
     
     useEffect(() => {
         const fetchWord = async () => {
